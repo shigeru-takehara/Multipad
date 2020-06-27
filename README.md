@@ -1,5 +1,6 @@
 # Multipad
-Notepad for Software Developer-Browser-Based Local Execution
+## Notepad for Software Developer-Browser-Based Local Web App
+
 Are you software developer? 
 When you need to keep memo, idea, temporary code, code comparison, etc. how do you keep that information? 
 
@@ -16,3 +17,5 @@ Multipad allows indvisual information in one page, which contain 20 workspace by
 - You can archive and restore the files (titles) so that you can keep only handy titles in the index page.
 - If you open a title with right mouse button and you can open in another tab or window.
 - Since it's web-based, you can see your memo from another computer, too.
+
+Download all files and run startPWA.bat. Then just play around and you can figure it out quickly.
