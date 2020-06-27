@@ -1,0 +1,145 @@
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+
+		<link rel="stylesheet" href="/css/primitive-ui-main.css" />
+		<link rel="stylesheet" href="/css/pwa.css" />
+		<link rel="stylesheet" href="/css/multipad.css" />
+
+		<title>MultiPad</title>
+	</head>
+
+	<body>
+		<div class="navbar">
+			<div class="dropdown">
+				<a href="#">Title</a>
+				<div></div>
+				<div class="dropdown-content">
+					<a href="#" onclick="pwa.webUtil.onClickOpen('addSub');">Add</a>
+					<a href="#" onclick="pwa.webUtil.onClickOpen('copySub');getIndexList('copySrcSubject');">Copy</a>
+					<a href="#" onclick="pwa.webUtil.onClickOpen('renameSub');getIndexList('renameSelect');">Rename</a>
+					<a href="#" onclick="pwa.webUtil.onClickOpen('archive');getIndexList('archiveSelect');">Archive</a>
+					<a href="#" onclick="pwa.webUtil.onClickOpen('restore');getArchiveList('restoreSelect');">Restore</a>
+					<a href="#" onclick="pwa.webUtil.onClickOpen('delSub');getIndexList('delSelect');">Delete</a>
+				</div>
+			</div>
+			<a href="#" onclick="pwa.webUtil.onClickOpen('config');getConfig()">Config</a>
+			<a href="#" onclick="pwa.webUtil.closeHTMLApp();pwa.webUtil.onClickOpen('logOut');"
+			>Exit</a>
+		</div>
+		
+		<h2>Title</h2>
+		
+		<ul>
+<!-- ###NEW-SUBJECT### -->
+		</ul>
+
+		<div id="logOut" class="modal">
+		  <div class="modal-content">
+			<p>Please close this page to finish.</p>
+		  </div>
+		</div>
+
+		<div id="addSub" class="modal">
+		  <div class="modal-content">
+			<span class="close" onClick="closeAddSubjectDialog()">&times;</span>
+			<input type="text" id="newSubject" placeholder="Enter a new title name...">
+			<button class="button" onClick="addSubject((document.getElementById('newSubject')).value)" title="Add a new title.">Add</button>
+		  </div>
+		</div>
+
+		<div id="copySub" class="modal">
+		  <div class="modal-content">
+			<span class="close" onClick="closeCopySubjectDialog()">&times;</span>
+			<div class='column'>
+				<select id="copySrcSubject">
+				</select>
+			</div>
+			<input type="text" id="copyDstSubject" placeholder="Enter a new title name...">
+			<button class="button" onClick="copySubject((document.getElementById('copySrcSubject')).value, (document.getElementById('copyDstSubject')).value)" title="Copy a title.">Copy</button>
+		  </div>
+		</div>
+
+		<div id="renameSub" class="modal">
+		  <div class="modal-content">
+			<span class="close" onClick="closeRenameSubjectDialog()">&times;</span>
+			<div class='column'>
+				<select id="renameSelect">
+				</select>
+			</div>
+			<input type="text" id="newRenamedSubject" placeholder="Enter a new title name...">
+			<button class="button" onClick="renameSubject((document.getElementById('renameSelect')).value, (document.getElementById('newRenamedSubject')).value)" title="Rename a title.">Rename</button>
+		  </div>
+		</div>
+
+		<div id="delSub" class="modal">
+		  <div class="modal-content">
+			<span class="close" onClick="closeDelSubjectDialog()">&times;</span>
+			<div class='column'>
+				<select id="delSelect">
+				</select>
+			</div>
+			<button class="button" onClick="delSubject((document.getElementById('delSelect')).value)" title="Delete a title.">Delete</button>
+		  </div>
+		</div>
+
+		<div id="archive" class="modal">
+		  <div class="modal-content">
+			<span class="close" onClick="closeArchiveDialog()">&times;</span>
+			<fieldset>
+				<legend>Archive</legend>
+				<div class='row'>
+					<div class='column'>
+						<select id="archiveSelect">
+						</select>
+					</div>
+					<div class='col'>
+						<button class="button" onClick="archiveSubject((document.getElementById('archiveSelect')).value)" title="Archive a title.">Archive</button>
+					</div>
+				</div>
+			</fieldset>
+		  </div>
+		</div>
+
+		<div id="restore" class="modal">
+		  <div class="modal-content">
+			<span class="close" onClick="closeRestoreDialog()">&times;</span>
+			<fieldset>
+				<legend>Restore</legend>
+				<div class='row'>
+					<div class='column'>
+						<select id="restoreSelect">
+						</select>
+					</div>
+					<div class='col'>
+						<button class="button" onClick="restoreSubject((document.getElementById('restoreSelect')).value)" title="Restore a title.">Restore</button>
+					</div>
+				</div>
+			</fieldset>
+		  </div>
+		</div>
+
+		<div id="config" class="modal">
+		  <div class="modal-content">
+			<span class="close" onClick="closeConfigDialog()">&times;</span>
+			<fieldset>
+				<legend>Editor Setup</legend>
+				<textarea id="editorSetup" placeholder="Set up editor path..." rows="5"></textarea>
+			</fieldset>
+			<fieldset>
+				<legend>Comparator Setup</legend>
+				<textarea id="comparatorSetup" placeholder="Set up comparator path..." rows="5"></textarea>
+			</fieldset>
+			<button class="button" onClick="saveConfig();closeConfigDialog()" title="Save configuration.">Save</button>
+		  </div>
+		</div>
+
+		<p>Multipad version 1.0</p>
+	</body>
+	<script src="/js/vue-2.6.11.js"></script>
+	<script src="/js/axios.min.js"></script>
+	<script src="/js/webUtil.js"></script>
+	<script src="/js/app/multipad.js"></script>
+</html>

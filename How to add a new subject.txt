@@ -1,0 +1,11 @@
+How to add a subject manually
+
+1. root/http-server/WEB-INF dir:
+- update index.html
+- add recXXX.html and update inside.
+
+2. root/http-server/WEB-INF/js/app dir:
+- add recXXX.js file and update inside.
+
+3. root/http-server/SERVER-SCRIPTS/jjs/app dir:
+- add XXXLoadLib.js file and update inside.
