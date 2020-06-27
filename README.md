@@ -22,11 +22,17 @@ Download all files and run startPWA.bat. Then just play around and you can figur
 
 You may have to update JDK path in the startPWA.bat. The default is PWA_BUILD_JAVA_HOME=c:\\java\\corretto_jdk1.8.0_212. Please update it as necessary.
 
+
 Index Page:
+
 ![index page](/multipad.PNG)
 
+
 Workspaces Page:
+
 ![workspaces page](/workspaces.PNG)
 
+
 Workspace Page:
+
 ![workspaces page](/workspace.PNG)
