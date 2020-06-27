@@ -1,5 +1,5 @@
 # Multipad
-## Notepad for Software Developer-Browser-Based Local Web App
+## Notepad for Software Developer Browser-Based Local Web App
 
 Are you software developer? 
 When you need to keep memo, idea, temporary code, code comparison, etc. how do you keep that information? 
