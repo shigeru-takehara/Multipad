@@ -41,6 +41,7 @@ Vue.component('rec', {
 				<button class="button" v-on:click="changeOrder" title="Change the Order.">Change Order</button>
 				<button class="button" v-on:click="compare" title="Compare Contents.">Compare</button>
 				<button class="button" v-on:click="minimize" title="Minimize Workspace.">Minimize</button>
+				<button class="button" onClick="openEditor()" title="Open External Editor.">Open in Editor</button>
 				<button class="button" v-on:click="goBack" title="Go Back to Index Page.">Back</button> <span id="headerMessage">Use Right-Mouse-Button to Popup "Workspace".</span>
 			</div>
 			<div class="content">
@@ -431,11 +432,20 @@ function compare() {
 }
 
 function openEditor() {
-	var content = rec.options.form1["memo" + currentSelectedIndex];
+	var content = rec.options.form1["memo" + currentWorkspace];
 
 	content = encodeURIComponent(content);
 	axios
-		.get(pwa.webUtil.URL + 'app/openEditor.jjs?' + currentSelectedIndex + '&' + content)
+		.get(pwa.webUtil.URL + 'app/openEditor.jjs?' + currentWorkspace + '&' + content)
+		.catch(error => console.log(error));
+}
+
+function openEditorBase(val) {
+	var content = rec.options.form1["memo" + val];
+
+	content = encodeURIComponent(content);
+	axios
+		.get(pwa.webUtil.URL + 'app/openEditor.jjs?' + val + '&' + content)
 		.catch(error => console.log(error));
 }
 
