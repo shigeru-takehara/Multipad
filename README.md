@@ -19,3 +19,5 @@ Multipad allows indvisual information in one page, which contain 20 workspace by
 - Since it's web-based, you can see your memo from another computer, too.
 
 Download all files and run startPWA.bat. Then just play around and you can figure it out quickly.
+
+You may have to update JDK path in the startPWA.bat. The default set is set PWA_BUILD_JAVA_HOME=c:\\java\\corretto_jdk1.8.0_212. Please update it as necessary.
