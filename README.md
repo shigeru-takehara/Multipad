@@ -36,3 +36,7 @@ Workspaces Page:
 Workspace Page:
 
 ![workspaces page](/workspace.PNG)
+
+## Configuration for Editor and Comparator
+Please click "Config" button and configure the program path. The default value is for Notepad++ and Beyond Compare.
+
